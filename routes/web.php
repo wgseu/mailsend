@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\fileController;
 use App\Http\Controllers\mailController;
-use App\Mail\mailTeste;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -10,3 +10,5 @@ Route::get('/', function () {
 
 
 Route::get('/email', [mailController::class, 'index']);
+Route::get('/arquivo', [fileController::class, 'index']);
+Route::post('/send', [fileController::class, 'store'])->name('upload.store');
